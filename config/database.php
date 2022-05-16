@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Str;
+use Illuminate\Database\DBAL\TimestampType;
 
 return [
 
@@ -46,7 +47,7 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'Mielophone'),
             'username' => env('DB_USERNAME', 'Kurason'),
@@ -142,6 +143,12 @@ return [
             'database' => env('REDIS_CACHE_DB', '1'),
         ],
 
+    ],
+
+    'dbal' => [
+        'types' => [
+            'timestamp' => TimestampType::class,
+        ],
     ],
 
 ];
