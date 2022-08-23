@@ -1,14 +1,15 @@
 <?php
 namespace App\Http\Controllers;
+use App\Models\Brodsky_list;
 use Illuminate\Support\Facades\DB;
 use App\Models\Brodsky;
 
-class BrodskyController extends Controller
+class BrodskyListController extends Controller
 {
     public function brodskyList()
     {
-        $posts = Brodsky::all();
-        dump($posts);
-        //return view('brodsky.brodskyList', ['posts' => $posts, 'title' => 'Brodsky\'s_list']);
+        $posts = Brodsky_list::all();
+        $contentClass = 'content';
+        return view('brodskyList.brodskyList', ['contentClass' => $contentClass, 'posts' => $posts, 'title' => 'Список Бродского']);
     }
 }

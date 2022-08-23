@@ -3,16 +3,13 @@
         {{$title}}
     </x-slot>
 
-    <table>
-        <tr>
-            <th>title</th>
-            <th>author</th>
-        </tr>
+    <x-slot name="contentClass">
+        {{$contentClass}}
+    </x-slot>
+
+    <ol>
         @foreach($posts as $elem)
-            <tr>
-                <td>{{$elem->title}}</td>
-                <td>{{$elem->author}}</td>
-            </tr>
+                <li>{{$elem->title}} {{$elem->author}}</li>
         @endforeach
-    </table>
+    </ol>
 </x-layout>

@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\BrodskyListController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,12 +14,8 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PageController::class, 'showMainTitle']);
 
-Route::get('/user/{name}', [UserController::class, 'show']);
+Route::get('/authorization', [PageController::class, 'authorization']);
 
-Route::get('/user/{surname}/{name}', [UserController::class, 'greating']);
-
-Route::get('/user/del/{surname}/{name}', [UserController::class, 'deleting']);
+Route::get('/brodsky', [BrodskyListController::class, 'brodskyList']);

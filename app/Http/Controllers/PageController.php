@@ -1,13 +1,21 @@
 <?php
 namespace App\Http\Controllers;
-use App\Models\Brodsky_list;
+use App\Models\Page;
 use Illuminate\Http\Request;
 
-class MainTitle extends Controller
+class PageController extends Controller
 {
     public function showMainTitle()
     {
-        $posts = Brodsky_list::all();
-        return view('mainTitle.mainTitle', ['posts' => $posts, 'title' => 'Mielophone. Home page.']);
+        $content = Page::find(1)['text'];
+        $contentClass = 'content';
+        return view('page.mainTitle', ['content' => $content, 'contentClass' => $contentClass, 'title' => 'Миелофон. Главная страница']);
+    }
+
+    public function authorization()
+    {
+        $content = '';
+        $contentClass = 'middle-right';
+        return view('page.mainTitle', ['content' => $content, 'contentClass' => $contentClass, 'title' => 'Миелофон. Авторизация']);
     }
 }
