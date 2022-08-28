@@ -12,6 +12,13 @@ class PageController extends Controller
         return view('page.mainTitle', ['content' => $content, 'contentClass' => $contentClass, 'title' => 'Миелофон. Главная страница']);
     }
 
+    public function about()
+    {
+        $content = Page::find(2)['text'];
+        $contentClass = 'content';
+        return view('page.mainTitle', ['content' => $content, 'contentClass' => $contentClass, 'title' => 'Миелофон. О проекте']);
+    }
+
     public function authorization()
     {
         $content = '';
