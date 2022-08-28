@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\BookAnnotation;
 
-class Brodsky_list extends Model
+class BrodskyList extends Model
 {
     use HasFactory;
 
-    public function getBook()
+    public function bookAnnotation()
     {
         return $this->hasOne(BookAnnotation::class);
     }

@@ -2,8 +2,8 @@
 <html lang="rus-RU">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width", initial-scale=1.0>
-    <link rel="stylesheet" href="../css/styles.css">
+    <meta name="viewport" content="width=device-width" initial-scale=1.0>
+    <link rel="stylesheet" href="/css/styles.css">
     <title>{{ $title }}</title>
 </head>
 
@@ -12,19 +12,27 @@
 <header>
     <div class="top-right">
         <div>
-            @include('elems.header')
+            <x-header.head />
         </div>
         <div>
-            @include('elems.navigation')
+            <x-header.navigation />
         </div>
+        @if(url()->full() == route('authorization'))
+        <div>
+            <x-header.authorization />
+        </div>
+        @endif
     </div>
 </header>
 
 <main>
+    @if (isset($picture))
+        <div class="middle-right">
+            <img id="bookImage" src="{{ $picture }}" alt="{{ $alt }}">
+        </div>
+    @endif
     <div class="{{ $contentClass }}">
-        <p>
-            {{ $slot }}
-        </p>
+        {{ $slot }}
     </div>
 </main>
 

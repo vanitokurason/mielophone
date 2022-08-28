@@ -16,10 +16,10 @@ use App\Http\Controllers\BrodskyListController;
 
 Route::get('/', [PageController::class, 'showMainTitle']);
 
-Route::get('/authorization', [PageController::class, 'authorization']);
+Route::get('/authorization', [PageController::class, 'authorization'])->name('authorization');
 
 Route::get('/about', [PageController::class, 'about']);
 
 Route::get('/brodsky', [BrodskyListController::class, 'brodskyList']);
 
-Route::get('/brodsky/{id}', [BrodskyListController::class, 'brodskyList']);
+Route::get('/brodsky/{id}', [BrodskyListController::class, 'getAnnotation']);

@@ -9,7 +9,7 @@
 
     <ol>
         @foreach($posts as $elem)
-                <li>{{$elem->title}} {{$elem->author}}</li>
+            <li><a href="/brodsky/{{ $elem->id }}">{{$elem->title}} {{$elem->author}}</a></li>
         @endforeach
     </ol>
 </x-layout>

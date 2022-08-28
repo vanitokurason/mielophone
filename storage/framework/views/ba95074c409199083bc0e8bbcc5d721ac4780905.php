@@ -2,8 +2,8 @@
 <html lang="rus-RU">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width", initial-scale=1.0>
-    <link rel="stylesheet" href="../css/styles.css">
+    <meta name="viewport" content="width=device-width" initial-scale=1.0>
+    <link rel="stylesheet" href="/css/styles.css">
     <title><?php echo e($title); ?></title>
 </head>
 
@@ -12,20 +12,61 @@
 <header>
     <div class="top-right">
         <div>
-            <?php echo $__env->make('elems.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.header.head','data' => []]); ?>
+<?php $component->withName('header.head'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
+<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
+<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
+<?php endif; ?>
         </div>
         <div>
-            <?php echo $__env->make('elems.navigation', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.header.navigation','data' => []]); ?>
+<?php $component->withName('header.navigation'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
+<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
+<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
+<?php endif; ?>
         </div>
+        <?php if(url()->full() == route('authorization')): ?>
+        <div>
+            <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'components.header.authorization','data' => []]); ?>
+<?php $component->withName('header.authorization'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
+<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
+<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
+<?php endif; ?>
+        </div>
+        <?php endif; ?>
     </div>
 </header>
 
 <main>
+    <?php if(isset($picture)): ?>
+        <div class="middle-right">
+            <img id="bookImage" src="<?php echo e($picture); ?>" alt="<?php echo e($alt); ?>">
+        </div>
+    <?php endif; ?>
     <div class="<?php echo e($contentClass); ?>">
-        <p>
-            <?php echo e($slot); ?>
+        <?php echo e($slot); ?>
 
-        </p>
     </div>
 </main>
 

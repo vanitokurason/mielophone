@@ -11,6 +11,6 @@ class Page extends Model
 
     public function getMain()
     {
-        return $this->hasOne(Book::class);
+        return $this->hasOne(BookAnnotation::class);
     }
 }
