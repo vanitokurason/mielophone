@@ -31,7 +31,7 @@
             <img id="bookImage" src="{{ $picture }}" alt="{{ $alt }}">
         </div>
     @endif
-    <div class="{{ $contentClass }}">
+    <div class="content">
         {{ $slot }}
     </div>
 </main>

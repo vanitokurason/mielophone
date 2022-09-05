@@ -64,7 +64,7 @@
             <img id="bookImage" src="<?php echo e($picture); ?>" alt="<?php echo e($alt); ?>">
         </div>
     <?php endif; ?>
-    <div class="<?php echo e($contentClass); ?>">
+    <div class="content">
         <?php echo e($slot); ?>
 
     </div>

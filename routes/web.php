@@ -14,12 +14,16 @@ use App\Http\Controllers\BrodskyListController;
 |
 */
 
-Route::get('/', [PageController::class, 'showMainTitle']);
+Route::get('/', [PageController::class, 'showMainTitle'])->name('mainTitle');
 
 Route::get('/authorization', [PageController::class, 'authorization'])->name('authorization');
 
-Route::get('/about', [PageController::class, 'about']);
+Route::get('/about', [PageController::class, 'about'])->name('about');
 
 Route::get('/brodsky', [BrodskyListController::class, 'brodskyList']);
 
 Route::get('/brodsky/{id}', [BrodskyListController::class, 'getAnnotation']);
+
+Route::get('/admin/brodsky', [BrodskyListController::class, 'editBrodskyList']);
+
+Route::get('/admin/brodsky/{id}', [BrodskyListController::class, 'editBook']);

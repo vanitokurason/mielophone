@@ -17,7 +17,7 @@
 
     <h2>{{ $post->title }}{{ $post->author ? ', ' . $post->author : '' }}</h2>
 
-    <p>Дата написания/публикации: {{ $post->bookAnnotation->publication_date }}</p>
+    <p>{{ $post->bookAnnotation->publication_date ? 'Дата написания/публикации: ' . $post->bookAnnotation->publication_date : ''}}</p>
 
     <p>{{ $post->bookAnnotation->annotation }}</p>
 

@@ -7,22 +7,23 @@ class PageController extends Controller
 {
     public function showMainTitle()
     {
-        $content = Page::find(1)['text'];
-        $contentClass = 'content';
-        return view('page.mainTitle', ['content' => $content, 'contentClass' => $contentClass, 'title' => 'Миелофон. Главная страница']);
+        $content = 'main';
+        $picture = '/images/Бродский_портрет_1.jpeg';
+        $alt = 'Бродский_портрет';
+        return view('page.mainTitle', ['alt' => $alt, 'picture' => $picture, 'content' => $content, 'title' => 'Миелофон. Главная страница']);
     }
 
     public function about()
     {
-        $content = Page::find(2)['text'];
-        $contentClass = 'content';
-        return view('page.mainTitle', ['content' => $content, 'contentClass' => $contentClass, 'title' => 'Миелофон. О проекте']);
+        $content = 'about';
+        $picture = '/images/Mielofon.png';
+        $alt = 'Миелофон';
+        return view('page.mainTitle', ['alt' => $alt, 'picture' => $picture, 'content' => $content, 'title' => 'Миелофон. О проекте']);
     }
 
     public function authorization()
     {
         $content = '';
-        $contentClass = 'middle-right';
-        return view('page.mainTitle', ['content' => $content, 'contentClass' => $contentClass, 'title' => 'Миелофон. Авторизация']);
+        return view('page.mainTitle', ['content' => $content, 'title' => 'Миелофон. Авторизация']);
     }
 }
