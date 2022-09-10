@@ -26,5 +26,6 @@ Route::get('/brodsky/{id}', [BrodskyListController::class, 'getAnnotation']);
 
 Route::get('/admin/brodsky', [BrodskyListController::class, 'editBrodskyList']);
 
-Route::get('/admin/brodsky/{id}', [BrodskyListController::class, 'editBook']);
+Route::match(['get', 'post'],'/admin/brodsky/edit/{id}', [BrodskyListController::class, 'editBook']);
+
 require __DIR__.'/auth.php';

@@ -21,7 +21,7 @@
                     <td>{{$elem->id}}.</td>
                     <td>{{$elem->title}}</td>
                     <td>{{$elem->author}}</td>
-                    <td><a href="/admin/brodsky/{{ $elem->id }}">edit</a> </td>
+                    <td><a href="/admin/brodsky/edit/{{ $elem->id }}">edit</a> </td>
                     <td>delete</td>
                 </tr>
             @endforeach
