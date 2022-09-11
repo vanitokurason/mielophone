@@ -136,11 +136,11 @@ table, th, td {
     padding: 10px;
 }
 
-input, label, textarea {
-    text-indent: 3px;
-    margin-left: 30px;
+input, textarea, label {
+    margin: 5px;
+    width: auto;
 }
 
-input, textarea {margin: 3px 7px 7px 30px;}
-
-label {padding: 3px 3px 10px 10px;}
+#form {
+    padding: 15px;
+}
