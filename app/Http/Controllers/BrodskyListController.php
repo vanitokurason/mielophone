@@ -51,4 +51,13 @@ class BrodskyListController extends Controller
 
         return view('brodskyList.bookForm', ['title' => $title, 'post' => $post]);
     }
+
+    public function createBook()
+    {
+        $title = 'editing...';
+        $post = new BrodskyList();
+        $post->save();
+
+        return view('brodskyList.bookForm', ['title' => $title, 'post' => $post]);
+    }
 }

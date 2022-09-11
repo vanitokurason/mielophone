@@ -2,43 +2,43 @@
 <html lang="rus-RU">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width" initial-scale=1.0>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/styles.css">
     <title>{{ $title }}</title>
 </head>
 
 <body class="back">
 <img class="back2" src="/images/giphy.gif" alt="vinyl">
-<header>
-    <div class="top-right">
-        <div>
-            <x-header.head />
+    <header>
+        <div class="top-right">
+            <div>
+                <x-header.head />
+            </div>
+            <div>
+                <x-header.navigation />
+            </div>
+            @if(url()->full() == route('authorization'))
+            <div>
+                <x-header.authorization />
+            </div>
+            @endif
         </div>
-        <div>
-            <x-header.navigation />
-        </div>
-        @if(url()->full() == route('authorization'))
-        <div>
-            <x-header.authorization />
-        </div>
+    </header>
+
+    <main>
+        @if (isset($picture))
+            <div class="middle-right">
+                <img id="bookImage" src="{{ $picture }}" alt="{{ $alt }}">
+            </div>
         @endif
-    </div>
-</header>
-
-<main>
-    @if (isset($picture))
-        <div class="middle-right">
-            <img id="bookImage" src="{{ $picture }}" alt="{{ $alt }}">
+        <div class="content">
+            {{ $slot }}
         </div>
-    @endif
-    <div class="content">
-        {{ $slot }}
-    </div>
-</main>
+    </main>
 
-<footer>
-    by Vanito Kurason ©, 2022
-</footer>
+    <footer>
+        by Vanito Kurason ©, 2022
+    </footer>
 </body>
 
 </html>

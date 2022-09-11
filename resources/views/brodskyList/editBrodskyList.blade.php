@@ -27,5 +27,5 @@
             @endforeach
     </table>
 
-    <p><a href="">Добавить новый елемент</a>    <a href="/">Выйти</a></p>
+    <p><a href="/admin/brodsky/createBook/">Добавить новый елемент</a>    <a href="/">Выйти</a></p>
 </x-layout>

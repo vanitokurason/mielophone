@@ -28,4 +28,6 @@ Route::get('/admin/brodsky', [BrodskyListController::class, 'editBrodskyList']);
 
 Route::match(['get', 'post'],'/admin/brodsky/edit/{id}', [BrodskyListController::class, 'editBook']);
 
+Route::match(['get', 'post'], '/admin/brodsky/createBook', [BrodskyListController::class, 'createBook']);
+
 require __DIR__.'/auth.php';
